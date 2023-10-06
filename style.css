@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Overpass:wght@400;700&display=swap');
+
+/* ------------------------------ */
+/* reset */
+/* ------------------------------ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--Very-Dark-Blue);
+  min-height: 100vh;
+  font-size: clamp(14px, 5vw, 15px);
+  font-family: 'Overpass', sans-serif;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button {
+  font: inherit;
+}
+
+p, h1, h2 {
+  overflow-wrap: break-word;
+  color: var(--White);
+}
+
+/* ------------------------------ */
+/* variable */
+/* ------------------------------ */
+
+:root {
+ 
+  --White: hsl(0, 0%, 100%);
+  --Light-Grey: hsl(217, 12%, 63%);
+  --Medium-Grey: hsl(216, 12%, 54%);
+  --Dark-Blue: hsl(213, 19%, 18%);
+  --Very-Dark-Blue: hsl(216, 12%, 8%);
+  --gradient: linear-gradient(to bottom, hsl(213, 19%, 14%), hsl(212, 23%, 11%));
+  --Orange: hsl(25, 97%, 53%);
+}
+
+main {
+  background: var(--gradient);
+  max-width: 25.75rem;
+  width: calc(100% - 2rem);
+  border-radius: 10px;
+  padding: clamp(1.2rem, 5vw, 2rem);
+  overflow: hidden;
+  position: relative;
+}
+
+.wrap { 
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.wrap .pic {
+  background-color: var(--Dark-Blue);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ h2 {
+  font-size: clamp(24px, 5vw, 28px);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+form .inner ~ button {
+  width: 100%;
+  text-transform: uppercase;
+  background-color: var(--Orange);
+  color: var(--White);
+  outline: unset;
+  border: unset;
+  border-radius: 20px;
+  font-weight: 500;
+  padding: 7px 5px;
+  transition: background-color 0.15s linear, color 0.15s linear;
+}
+
+form .inner ~ button:is(:hover, :focus) {
+  background-color: var(--White);
+  color: var(--Orange);
+}
+
+.inner {
+ display: flex;
+ justify-content: space-between;
+}
+
+label {
+  position: relative;
+  overflow: hidden;
+}
+
+label input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  left: -10px;
+}
+
+.inner label span {
+  --size: clamp(2.623rem, 13vw, 3.1875rem);
+  width: var(--size);
+  height: var(--size);
+  background-color: var(--Dark-Blue);
+  border-radius: var(--size);
+  color: var(--Light-Grey);
+  display: grid;
+  place-content: center;
+  transition: background-color 0.15s linear, color 0.15s linear;
+}
+
+.inner label span:hover, label input:focus + span {
+  background-color: var(--Orange);
+  color: var(--White);
+}
+
+.inner input {
+  position: absolute;
+  
+}
+
+input:checked + span {
+  background-color: var(--Light-Grey);
+  color: var(--White);
+}
+
+.wrab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.wrab .first_p {
+  color: var(--Orange);
+  padding: 6px 10px;
+  background-color: var(--Dark-Blue);
+  border-radius: 20px;
+}
+
+.wrab .second_p {
+  text-align: center;
+  color: var(--Light-Grey);
+}
+
+.animate-out {
+  animation: animate-out .15s ease-out both;
+}
+
+.animate-in {
+  animation: animate-in .15s ease-out both;
+}
+
+@keyframes animate-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    translate: -3rem;
+  }
+  
+}
+
+@keyframes animate-in {
+  from {
+    opacity: 0;
+    translate: 3rem;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0;
+  }
+  
+}
+
+.white {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  width: clamp(1.2rem, 5vw, 2rem);
+  height:  clamp(1.2rem, 5vw, 2rem);
+  border-radius: 50%;
+  background-color: var(--Dark-Blue);
+  border: unset;
+  outline: unset;
+ 
+  /* font-size:  clamp(0.5rem, 5vw, 1.2rem); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+
+
+
